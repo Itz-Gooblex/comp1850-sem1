@@ -15,11 +15,11 @@ is_valid = True
 try:
     int(amount)
 except:
-    print("Invalid_type")
+    print("Invalid amount")
     is_valid = False
 else:
     if "." in amount:
-        print("Invalid type")
+        print("Invalid amount")
         is_valid = False
 
 if is_valid:
@@ -35,6 +35,6 @@ if is_valid:
 # Calculate the total amount of money including interest (0.8% of the final annual amount) they will have saved in a year.
 # print this out in the format £X.XX (to two decimal places).
 
-    total *= 1.08
-    print(f"Total Saved + Interest: £{total:.2f}")
+    net_total = total * 1.008
+    print(f"£{net_total:.2f}")
 

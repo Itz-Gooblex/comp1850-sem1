@@ -3,10 +3,31 @@
 # You are going to write a very simple program:
 
 # Ask a user to enter two numbers (one per input)
+num1 = input("Please enter first number:")
+num2 = input("Please enter second number:")
+
+valid = True
+
+try:
+    num1 = float(num1)
+except:
+    print("That is not a number")
+    valid = False
+
+if valid:
+    try:
+        num2 = float(num2)
+    except:
+        print("That is not a number")
+        valid = False
+    
 
 # multiply those numbers together
+if valid:
+    prod = num1 * num2
 
 # print out the result
+    print(prod)
 
 # There is an extra point available for validating that they entered numbers!
 # Add to your code so that if they entered something other than an integer it prints

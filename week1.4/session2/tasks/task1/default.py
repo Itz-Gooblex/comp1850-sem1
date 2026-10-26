@@ -1,6 +1,6 @@
 # Week 4, Session 2: Task 1
 
-def greeting(name='John'):
+def greeting(name='Chris'):
     # Your task is change the default name to your name and observe the output
     print(f'Good morning {name}')
 

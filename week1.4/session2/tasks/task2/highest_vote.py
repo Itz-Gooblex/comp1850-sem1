@@ -16,9 +16,24 @@ def most_frequent_string(votes):
         and int is the count of its occurences
         - None, None: if votes is empty.
     """
-
+    frequency_dict = {}
     # Your task is to complete the body of the function based on the details in the docstring.
-    # Hint 1: You can complete this task with for loops or comprehensions 
+    if not votes:
+        return (None, None)
+    for word in votes:
+        if word not in frequency_dict:
+            frequency_dict[word] = 1
+        else:
+            frequency_dict[word] += 1
+
+    freq_word = (None, 0)
+    for word, freq in frequency_dict.items():
+        if freq > freq_word[1]:
+            freq_word = (word, freq)
+
+    return freq_word
+
+    # Hint 1: You can complete this task with for loops or comprehensions
     # Hint 2: Think about the properties of the various collection-types
 
 

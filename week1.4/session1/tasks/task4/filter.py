@@ -6,9 +6,9 @@
 # Your task is to update the docstring to reflect what the function does.
 
 
-def filter_positive_numbers(numbers):
+def filter_positive_numbers(numbers:list) -> list(int):
     """
-    Filters out positive numbers from the list, keeping only the negative ones.
+    Filters out negative numbers from the list, keeping only the positive ones.
     The function returns a list of all the positive numbers in the input.
 
     Args:

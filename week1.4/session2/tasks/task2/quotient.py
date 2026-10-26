@@ -20,7 +20,7 @@ def divide_and_remainder(dividend, divisor):
     # complete your code here
 
     # Returning both quotient and remainder
-    return quotient, remainder
+    return (dividend // divisor, dividend % divisor)
 
 # Check if correct output is produced
 quotient, remainder = divide_and_remainder(10, 3)

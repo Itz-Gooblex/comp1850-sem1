@@ -3,9 +3,12 @@
 # You are given the function mystery_func. 
 # Inspect the code in the function
 # Your task is to write a corresponding docstring
-# - what the function does 
+# - what the function does
+## returns the number of uppercase and lowercase numbers in the string
 # - what is the input data and type
+## input is a string of type string
 # - what is the return value and type
+## return value is a tuple of integers in the form (numb of uppers, number of lowers)
 
 
 # function implementation

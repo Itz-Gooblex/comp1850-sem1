@@ -14,6 +14,12 @@ class Point:
         """
         Creates a Point, given x & y coordinates.
         """
+        if type(x) != float:
+            raise TypeError("x is not a number")
+
+        if type(y) != float:
+            raise TypeError("y is not a number")
+
         self.x = x
         self.y = y
 

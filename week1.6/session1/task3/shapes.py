@@ -39,3 +39,25 @@ class Shape:
 
 # Implement your Circle class here
 # Make sure that it inherits properly from Shape!
+class Circle(Shape):
+    def __init__(self, position, radius, colour="red"):
+        # Inherit properties from Shapes class
+        super().__init__(position, colour)
+        # Define radius attribute
+        self.set_radius(radius)
+
+    def set_radius(self, new_radius):
+        if type(new_radius) not in [float, int]:
+            raise TypeError("Type cannot be converted into a radius")
+        if new_radius <= 0:
+            raise ValueError("Radius must be greater han zero")
+        self.radius = new_radius
+
+    def __str__(self):
+        return f"{self.colour} circle, radius {self.radius}, at {self.position}"
+
+    def area(self):
+        return f"{(math.pi*self.radius**2):.3f}"
+
+    def perimeter(self):
+        return f"{(math.tau*self.radius):.3f}"

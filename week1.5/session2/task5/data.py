@@ -21,23 +21,37 @@ class Dataset:
 
         Any existing data will be deleted.
         """
+        self.data.clear()
+        with open(filename, "r+") as file:
+            try:
+                self.data = [int(a) for a in file.read().split(",")]
+            except:
+                raise TypeError("Data cannot be converted into a numerical represetnation")
 
     def __len__(self):
         """
         Returns the size of this Dataset.
         """
+        return len(self.data)
 
     def __getitem__(self, index):
         """
         Returns the value at the specified position in this Dataset.
         """
+        return self.data[index]
 
     def mean(self):
         """
         Returns the arithmetic mean of the values in this Dataset.
         """
+        return sum(self.data)/len(self)
 
     def median(self):
         """
         Returns the median of the values in this Dataset.
         """
+        if len(self) % 2:
+            return self[len(self)//2]
+        else:
+            return ( self[len(self)//2] + self[-1+len(self)//2] )/2
+

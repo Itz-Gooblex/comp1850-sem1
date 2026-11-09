@@ -13,25 +13,31 @@ with open(filename, "r") as file:
 
 # read in the data, and for each student calculate their average grade and classification
 #print(raw_student_data)
+
+#LUT for grade ranges
 classification = {"1":[70,101],
                   "2:1":[60, 70],
                   "2:2":[50, 60],
                   "3":[40,50],
                   "F":[-1,40]}
 
-student_data = {"student:id":["average_grade","classification"]}
+student_data = {"student:id":["average_grade","classification"]} # Format data as "ID:grade, class"
+
 for entry in raw_student_data:
     student_data[entry] = 0
-    for score in raw_student_data[entry]:
+
+    for score in raw_student_data[entry]: # Nested loop goes through each score for each student
         if score:
             student_data[entry] += int(score)
     student_data[entry] /= len(raw_student_data[entry])
-    classed_grade = ""
-    for classname in classification:
+    classed_grade = "" #Intialisation of classed_grade variable
+
+    for classname in classification: # Checks what range the score is in, ergo which class
         if classification[classname][0] <= student_data[entry] < classification[classname][1]:
             classed_grade = classname 
-    student_data[entry] = [f"{student_data[entry]:.2f}",classed_grade]
+    student_data[entry] = [f"{student_data[entry]:.2f}",classed_grade] # Add student_score = [average score (2sf), grade class]
 
+#File handling - 
 file2 = open(f"{filename}_out.csv", "w")
 file2.truncate()
 for entry in student_data:

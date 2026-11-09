@@ -16,10 +16,12 @@ print(f"Time {systime:03} State {state}")
 # Simulate the traffic light system up to time=maxtime in 1-second steps
 change_time = 0
 
+#Iteration for each timestep
 while systime < maxtime:
     change_time += 1
     systime += 1
 
+    #For each state, the state is updated if the difference in timestep match the one in the stages LUT
     if states[state] == change_time:
         match state:
             case "red":

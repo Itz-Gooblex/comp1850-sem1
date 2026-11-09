@@ -5,6 +5,7 @@ from sys import exit
 num_list = []
 
 num_list = U.read_numbers()
+#Edge Case - empty list
 if not num_list:
     exit("Error: no numbers provided")
 else:
@@ -12,8 +13,9 @@ else:
     print(num_list)
     print(f"Minimum: {min(num_list)}")
     print(f"Maximum: {max(num_list)}")
-    print(f"Mean: {sum(num_list)/len(num_list)}")
+    print(f"Mean: {sum(num_list)/len(num_list)}") #Take the sum and divide by total number of entries
     median = 0
+    #If statement to take avarage of neighbouring data entries if median pos is a fraction
     if len(num_list) % 2:
         median = num_list[len(num_list)//2]
     else:

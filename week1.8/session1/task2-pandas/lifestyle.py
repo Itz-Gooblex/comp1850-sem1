@@ -3,13 +3,16 @@ import pandas
 data = pandas.read_csv("lifestyle_data.csv")
 
 # What data type is `data` as output from the `read_csv()` method?
+# DataFrame or TextFileReader
 
 # For each of the following pieces of information, try and use pandas to find the answer from the dataset in 'data'
 # - You can open the csv file to see what data is available.
 # - Use the pandas documentation to explore functions that you can use.
 # - Leave your code under the comments.
 
+print(data)
 # Find the total number of students
+print(data.size)
 
 # Find the mean average GPA of the students
 

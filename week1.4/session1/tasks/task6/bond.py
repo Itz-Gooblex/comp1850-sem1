@@ -16,7 +16,21 @@ def isBond(intList):
     # meaning you need to delete pass to write your code.
     # Nothing happens when pass is executed.
 
-    pass     # delete pass to write your code
+    if len(intList) < 3:
+        return False
+
+    nums = 0
+    for num in intList: #Iterate through list to find sequence 007
+        match nums:
+            case 0 | 1: #Case of finding 1st | 2nd digit
+                if num == 0:
+                    nums += 1
+            case 2: #Case of finding 3rd digit
+                if num == 7:
+                    nums += 1
+                    break
+    return nums == 3 #007 is found is all 3 digits are found
+
 
 # Check if the following lines of code produce the correct output
 print(isBond([1, 2, 4, 0, 0, 7, 5]))   # True

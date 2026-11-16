@@ -32,7 +32,19 @@ def calculate_grade(marks):
         None: If `marks` is not a valid integer or is outside the allowed
               range (greater than 100 or negative)
     """
-    pass
+    return None if 0 > marks or 100 < marks
+
+    grade_boundaries = {"F":[0, 50],
+                        "D":[50, 60],
+                        "C":[60, 70],
+                        "B":[70, 80],
+                        "A":[80, 101]}
+
+    grade = ""
+
+    for potential_grade in grade_boundaries:
+      if grade_boundaries[potential_grade][0] <= marks < grade_boundaries[potential_grade][1]:
+        grade = potential_grade
 
     return grade
 

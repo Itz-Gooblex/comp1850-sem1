@@ -4,6 +4,7 @@
 
 expenses = [10, 20, 30]
 
+total = 0 # Total variable wasn't initialised
 for amount in expenses:
     total = total + amount  
 

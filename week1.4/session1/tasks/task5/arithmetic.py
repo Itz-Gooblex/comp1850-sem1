@@ -54,7 +54,6 @@ def run_program():
         case _:
             print("Undefined operation")
 
-
 run_program()
 
 
@@ -65,3 +64,7 @@ run_program()
 
 #    If you are to split each task into a separate function, how would you
 #   name the function for each of these tasks?
+
+# 1 - get_input()
+# 2 - prompt_input()
+# 3 - validate_input()

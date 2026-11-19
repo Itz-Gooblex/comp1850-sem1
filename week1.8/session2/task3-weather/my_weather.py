@@ -22,26 +22,29 @@ response = httpx.get(url)
 # status code (should be checked)
 print(response.status_code)
 
-# json data
-data = response.json()
+if response.status_code != 200:
+    response.raise_for_status()
+else:
+    # json data
+    data = response.json()
 
-# raw data output
-print(data)
+    # raw data output
+    print(data)
 
-# extract the temperature data as lists from the JSON dictionary
-temp_data = data['days']
+    # extract the temperature data as lists from the JSON dictionary
+    temp_data = data['days']
 
-print(temp_data)
+    print(temp_data)
 
-# use pandas to convert data to  dataframe
+    # use pandas to convert data to  dataframe
 
-df = pd.DataFrame(temp_data)
+    df = pd.DataFrame(temp_data)
 
-# using matplotlib plot the 3 data sets: (tempmin,temp,tempmax) as line graphs
+    # using matplotlib plot the 3 data sets: (tempmin,temp,tempmax) as line graphs
 
-df.plot()
+    df.plot()
 
-plt.show()
+    plt.show()
 
 # annotate the graph with axis labels
 
